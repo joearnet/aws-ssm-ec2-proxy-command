@@ -13,7 +13,7 @@
 # Add following SSH Config Entry to ~/.ssh/config
 #   host i-* mi-*
 #     IdentityFile ~/.ssh/id_rsa
-#     ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %h %r %p ~/.ssh/id_rsa.pub
+#     ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %h %r %p ~/.ssh/id_ed25519.pub
 #     StrictHostKeyChecking no
 #
 # Ensure SSM Permissions for Target Instance Profile
