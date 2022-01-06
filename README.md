@@ -30,8 +30,8 @@ Open an SSH connection to your ec2 instances via AWS SSM without the need to ope
 * Add ssh config entry for aws ec2 instances to your `~/.ssh/config`. Adjust key file path if needed.
   ```ssh-config
   host i-* mi-*
-    IdentityFile ~/.ssh/id_rsa
-    ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %h %r %p ~/.ssh/id_rsa.pub
+    IdentityFile ~/.ssh/id_ed25519
+    ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %h %r %p ~/.ssh/id_ed25519.pub
     StrictHostKeyChecking no
   ```
 
@@ -46,8 +46,8 @@ Open an SSH connection to your ec2 instances via AWS SSM without the need to ope
 ###### SSH Command with ProxyCommand CLI Option
 ```sh
 ssh <INSTACEC_USER>@<INSTANCE_ID> \
-  -i "~/.ssh/id_rsa" \
-  -o ProxyCommand="~/.ssh/aws-ssm-ec2-proxy-command.sh %h %r %p ~/.ssh/id_rsa.pub"
+  -i "~/.ssh/id_ed25519" \
+  -o ProxyCommand="~/.ssh/aws-ssm-ec2-proxy-command.sh %h %r %p ~/.ssh/id_ed25519.pub"
 ```
 
 ## Alternative Implementation with `ec2-instance-connect`

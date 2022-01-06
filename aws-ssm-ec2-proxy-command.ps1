@@ -12,7 +12,7 @@
 #
 # Add following SSH Config Entry to ~/.ssh/config
 #   host i-* mi-*
-#     IdentityFile ~/.ssh/id_rsa
+#     IdentityFile ~/.ssh/id_ed25519
 #     ProxyCommand powershell .exe ~/.ssh/aws-ssm-ec2-proxy-command.ps1 %h %r %p ~/.ssh/id_ed25519.pub
 #     StrictHostKeyChecking no
 #

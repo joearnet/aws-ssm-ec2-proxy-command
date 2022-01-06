@@ -38,8 +38,8 @@ Unfortunately on Windows is not possible to show output while running ProxyComma
 
 ```ssh-config
 host i-* mi-*
-  IdentityFile ~/.ssh/id_rsa
-  ProxyCommand powershell.exe ~/.ssh/aws-ssm-ec2-proxy-command.ps1 %h %r %p ~/.ssh/id_rsa.pub
+  IdentityFile ~/.ssh/id_ed25519
+  ProxyCommand powershell.exe ~/.ssh/aws-ssm-ec2-proxy-command.ps1 %h %r %p ~/.ssh/id_ed25519.pub
   StrictHostKeyChecking no
 ```
 
@@ -60,8 +60,8 @@ host i-* mi-*
 
 ```powershell
 ssh.exe <INSTACEC_USER>@<INSTANCE_ID> `
--i "~/.ssh/id_rsa" `
--o ProxyCommand="powershell.exe ~/.ssh/aws-ssm-ec2-proxy-command.ps1 %h %r %p ~/.ssh/id_rsa.pub"
+-i "~/.ssh/id_ed25519" `
+-o ProxyCommand="powershell.exe ~/.ssh/aws-ssm-ec2-proxy-command.ps1 %h %r %p ~/.ssh/id_ed25519.pub"
 ```
 
 ## Alternative Implementation with `ec2-instance-connect`
